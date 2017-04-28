@@ -163,6 +163,11 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vspli
 " ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+" st = 新規タブ
+nnoremap st :<C-u>tabnew<CR>
+" sn=次のタブへ、sp=前のタブへ
+nnoremap sn gt
+nnoremap sp gT
 """"""""""""""""""""""""""""""
 
 " http://inari.hatenablog.com/entry/2014/05/05/231307
@@ -251,7 +256,7 @@ endif
 """"""""""""""""""""""""""""""
 imap { {}<LEFT>
 imap [ []<LEFT>
-imap ( ()<LEFT>
+imap ' ''<LEFT>
 """"""""""""""""""""""""""""""
 
 " filetypeの自動検出(最後の方に書いた方がいいらしい)
