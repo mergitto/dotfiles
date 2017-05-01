@@ -11,3 +11,9 @@ git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 ```
 :NeoBundleInstall
 ```
+### backupfileを作るようにしているので
+```
+mkdir ~/.vimbackup
+```
+にてバックアップ用のファイルを作成してあげる
+
