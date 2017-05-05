@@ -239,6 +239,17 @@ if has('conceal')
 endif
 "set snippet file dir
 let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/,~/.vim/snippets'
+""""""""""""""""""""""""""""""
+" 任意のファイルを実行する
+""""""""""""""""""""""""""""""
+autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
+autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
+autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
+""""""""""""""""""""""""""""""
+" Ctrl + t で新しいタブを開いてカレントディレクトリからのツリー構造
+""""""""""""""""""""""""""""""
+nnoremap <C-t> :NERDTreeToggle
+let g:NERDTreeWinSize = 30
 
 """"""""""""""""""""""""""""""
 " 最後のカーソル位置を復元する
