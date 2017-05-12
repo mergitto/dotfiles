@@ -48,10 +48,14 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 " less用のsyntaxハイライト
 NeoBundle 'KohPoll/vim-less'
 
-" php補完を行う
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
+if has('lua') " lua機能が有効になっている場合・・・・・・①
+  "　コードの自動補完
+  NeoBundle 'Shougo/neocomplete.vim'
+  "  スニペットの補完機能
+  NeoBundle 'Shougo/neosnippet'
+  "  スニペット集
+  NeoBundle 'Shougo/neosnippet-snippets'
+endif
 
 " 余談: neocompleteは合わなかった。ctrl+pで補完するのが便利
 
@@ -169,6 +173,33 @@ nnoremap st :<C-u>tabnew<CR>
 nnoremap sn gt
 nnoremap sp gT
 """"""""""""""""""""""""""""""
+"----------------------------------------------------------
+" neocomplete・neosnippetの設定
+"----------------------------------------------------------
+if neobundle#is_installed('neocomplete.vim')
+  " Vim起動時にneocompleteを有効にする
+  let g:neocomplete#enable_at_startup = 1
+  " smartcase有効化. 大文字が入力されるまで大文字小文字の区別を無視する
+  let g:neocomplete#enable_smart_case = 1
+  " 3文字以上の単語に対して補完を有効にする
+  let g:neocomplete#min_keyword_length = 3
+  " 区切り文字まで補完する
+  let g:neocomplete#enable_auto_delimiter = 1
+  " 1文字目の入力から補完のポップアップを表示
+  let g:neocomplete#auto_completion_start_length = 1
+  "neosnippet
+  imap <C-k> <Plug>(neosnippet_expand_or_jump)
+  smap <C-k> <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k> <Plug>(neosnippet_expand_target)
+  " タブキーで補完候補の選択. スニペット内のジャンプもタブキーでジャンプ
+  imap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+  smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+endif
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
 
 " http://inari.hatenablog.com/entry/2014/05/05/231307
 """"""""""""""""""""""""""""""
@@ -222,23 +253,10 @@ function! s:GetHighlight(hi)
   return hl
 endfunction
 """"""""""""""""""""""""""""""
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-" SuperTab like snippets behavior.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 " " For conceal markers.
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-"set snippet file dir
-let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/,~/.vim/snippets'
 """"""""""""""""""""""""""""""
 " 任意のファイルを実行する
 """"""""""""""""""""""""""""""
@@ -250,6 +268,11 @@ autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
 """"""""""""""""""""""""""""""
 nnoremap <C-t> :NERDTreeToggle
 let g:NERDTreeWinSize = 30
+
+""""""""""""""""""""""""""""""
+" backspaceキーが効かなくなった時の対処
+""""""""""""""""""""""""""""""
+set backspace=indent,eol,start
 
 """"""""""""""""""""""""""""""
 " 最後のカーソル位置を復元する
