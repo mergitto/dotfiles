@@ -47,6 +47,8 @@ NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
 " less用のsyntaxハイライト
 NeoBundle 'KohPoll/vim-less'
+" 括弧を自動的に挿入してくれる
+NeoBundle 'Townk/vim-autoclose'
 
 if has('lua') " lua機能が有効になっている場合・・・・・・①
   "　コードの自動補完
@@ -187,6 +189,8 @@ if neobundle#is_installed('neocomplete.vim')
   let g:neocomplete#enable_auto_delimiter = 1
   " 1文字目の入力から補完のポップアップを表示
   let g:neocomplete#auto_completion_start_length = 1
+  " 独自スニペットのディレクトリ指定
+  let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/'
   "neosnippet
   imap <C-k> <Plug>(neosnippet_expand_or_jump)
   smap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -284,14 +288,7 @@ if has("autocmd")
     \ endif
 endif
 """"""""""""""""""""""""""""""
-
 """"""""""""""""""""""""""""""
-" 自動的に閉じ括弧を入力
-""""""""""""""""""""""""""""""
-imap { {}<LEFT>
-imap [ []<LEFT>
-imap ' ''<LEFT>
-""""""""""""""""""""""""""""""
-
 " filetypeの自動検出(最後の方に書いた方がいいらしい)
+""""""""""""""""""""""""""""""
 filetype on
