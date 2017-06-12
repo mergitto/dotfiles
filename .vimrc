@@ -49,6 +49,8 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'KohPoll/vim-less'
 " 括弧を自動的に挿入してくれる
 NeoBundle 'Townk/vim-autoclose'
+" 分割画面の時のサイズ調整を簡単にできるようにする
+NeoBundle 'simeji/winresizer'
 
 if has('lua') " lua機能が有効になっている場合・・・・・・①
   "　コードの自動補完
@@ -222,6 +224,13 @@ if has('syntax')
     call ZenkakuSpace()
 endif
 """"""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
+"　ウィンドウリサイズ状態にする
+""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
+" Ctrl +  h　でウィンドウリサイズモードに変更
+""""""""""""""""""""""""""""""
+let g:winresizer_start_key = '<C-h>'
 """"""""""""""""""""""""""""""
 " https://sites.google.com/site/fudist/Home/vim-nihongo-ban/-vimrc-sample
 """"""""""""""""""""""""""""""
