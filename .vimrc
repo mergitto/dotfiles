@@ -136,6 +136,8 @@ set whichwrap=b,s,h,l,<,>,[,]
 syntax on
 " カーソル行にアンダーラインを引く
 set cursorline
+" 置換をvim特有のものではなくて標準のものを使用する
+nmap / /\v
 " カラースキーマの指定
 colorscheme desert
 " 行番号の色
