@@ -100,10 +100,14 @@ set showcmd
 set backupdir=$HOME/.vimbackup
 " バッファで開いているファイルのディレクトリでエクスクローラを開始する(でもエクスプローラって使ってない)
 set browsedir=buffer
+" 大文字小文字を区別しない
+set ignorecase
 " 小文字のみで検索したときに大文字小文字を無視する
 set smartcase
 " 検索結果をハイライト表示する
 set hlsearch
+" カーソルを文字が存在しない部分でも動けるようにする
+set virtualedit=all
 " 暗い背景色に合わせた配色にする
 set background=dark
 " タブ入力を複数の空白入力に置き換える
@@ -178,6 +182,13 @@ nnoremap st :<C-u>tabnew<CR>
 " sn=次のタブへ、sp=前のタブへ
 nnoremap sn gt
 nnoremap sp gT
+" 検索後にジャンプした時に検索単語の行を画面中央にする
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
 """"""""""""""""""""""""""""""
 "----------------------------------------------------------
 " neocomplete・neosnippetの設定
