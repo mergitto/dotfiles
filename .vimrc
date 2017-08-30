@@ -51,6 +51,8 @@ NeoBundle 'KohPoll/vim-less'
 NeoBundle 'Townk/vim-autoclose'
 " 分割画面の時のサイズ調整を簡単にできるようにする
 NeoBundle 'simeji/winresizer'
+" cssコードのシンタックス
+NeoBundle 'hail2u/vim-css3-syntax'
 
 if has('lua') " lua機能が有効になっている場合・・・・・・①
   "　コードの自動補完
@@ -106,8 +108,6 @@ set ignorecase
 set smartcase
 " 検索結果をハイライト表示する
 set hlsearch
-" カーソルを文字が存在しない部分でも動けるようにする
-set virtualedit=all
 " 暗い背景色に合わせた配色にする
 set background=dark
 " タブ入力を複数の空白入力に置き換える
@@ -236,6 +236,12 @@ if has('syntax')
     augroup END
     call ZenkakuSpace()
 endif
+" htmlの閉じタグを</まで打てば自動的に補完してくれる
+augroup MyXML
+  autocmd!
+  autocmd FileType xml inoremap <buffer> </ </<C-x><C-o>
+  autocmd FileType html inoremap <buffer> </ </<C-x><C-o>
+augroup END
 """"""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""
 "　ウィンドウリサイズ状態にする
