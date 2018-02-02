@@ -1,5 +1,10 @@
 # dotfiles
 .vimrc
+### .vimrcのコピー
+```
+cd dotfiles
+cp .vimrc ~/
+```
 
 ### NeoBundleのインストール
 ```
