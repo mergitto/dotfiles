@@ -22,6 +22,17 @@ mkdir ~/.vimbackup
 ```
 にてバックアップ用のファイルを作成してあげる
 
+### zshのインストール
+```
+yum install zsh
+```
+cat /etc/shells でzshが利用できるか確認する
+おそらく/bin/zshのようなものがあるはず
+### デフォルトのシェルにzshを設定する
+```
+chsh -s /bin/zsh # zshの場所は各々上記のコマンドにて確認
+```
+
 ### .zshrcとのコピーと.oh-my-zshのインストール
 ```
 cp .zshrc ~/
