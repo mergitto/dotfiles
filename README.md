@@ -22,3 +22,8 @@ mkdir ~/.vimbackup
 ```
 にてバックアップ用のファイルを作成してあげる
 
+### .zshrcとのコピーと.oh-my-zshのインストール
+```
+cp .zshrc ~/
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+```
