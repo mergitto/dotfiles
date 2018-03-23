@@ -16,6 +16,8 @@ ZSH_THEME="risto"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 alias brew="env PATH=${PATH/\/Users\/riki\/\.pyenv\/shims:/} brew"
 
