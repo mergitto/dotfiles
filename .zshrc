@@ -14,15 +14,24 @@ ZSH_THEME="risto"
 
 # pyenvのパスを通す
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
+if [ -d "${PYENV_ROOT}" ]; then
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
 alias brew="env PATH=${PATH/\/Users\/riki\/\.pyenv\/shims:/} brew"
 
+# rbenvのパスを通す
+export RBENV_ROOT="$HOME/.rbenv"
+if [ -d "${RBENV_ROOT}" ]; then
+  export PATH="$RBENV_ROOT/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
+
 # javaのパスを通す
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export JAVA_HOME=`/usr/libexec/java_home`
+if [ -d "${JAVA_HOME}" ]; then
+  export PATH=`$JAVA_HOME -v 1.8`
+fi
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
