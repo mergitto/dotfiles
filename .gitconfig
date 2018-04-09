@@ -1,0 +1,12 @@
+[user]
+  name = github.username
+  email = github.email
+
+[alias]
+  st = status
+  graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+
+[core]
+  editor = /usr/bin/vim
+[color]
+  ui = true
