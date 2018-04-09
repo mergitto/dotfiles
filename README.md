@@ -6,6 +6,11 @@ cd dotfiles
 cp .vimrc ~/
 ```
 
+### .gitconfigの追加
+```
+cp .gitconfig ~/
+```
+
 ### NeoBundleのインストール
 ```
 mkdir -p ~/.vim/bundle
