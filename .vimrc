@@ -136,6 +136,9 @@ set shiftwidth=2
 set smarttab
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
+" 文字コードの設定
+set encoding=utf-8
+set fileencodings=sjis,utf-8
 " 構文毎に文字色を変化させる
 syntax on
 " カーソル行にアンダーラインを引く
