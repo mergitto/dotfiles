@@ -1,3 +1,7 @@
+# vimの環境構築
+vimにはrubyのパスを指定しないとsnippetsできないので、vimを入れる環境には前もってrbenvとかで良いからrubyを入れておく
+vimをgitからビルドする時にrubyのパスを指定する必要があるが、`which ruby`とかで使われているパスを調べておくと良い
+
 # dotfiles
 .vimrc
 ### .vimrcのコピー
