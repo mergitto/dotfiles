@@ -138,7 +138,7 @@ set smarttab
 set whichwrap=b,s,h,l,<,>,[,]
 " 文字コードの設定
 set encoding=utf-8
-set fileencodings=sjis,utf-8
+set fileencodings=utf-8
 " 構文毎に文字色を変化させる
 syntax on
 " カーソル行にアンダーラインを引く
@@ -298,6 +298,7 @@ endif
 autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
+autocmd BufNewFile,BufRead *.go nnoremap <C-e> :!go %
 """"""""""""""""""""""""""""""
 " Ctrl + t で新しいタブを開いてカレントディレクトリからのツリー構造
 """"""""""""""""""""""""""""""
