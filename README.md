@@ -47,3 +47,13 @@ chsh -s /bin/zsh # zshの場所は各々上記のコマンドにて確認
 cp .zshrc ~/
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 ```
+
+### コマンドのパスを設定する場合
+例：Goのパスを設定する場合
+```
+export GOPATH=~/Path/mygo >> ~/.zshrc
+```
+pathの設定を反映させる
+```
+source ~/.zshrc
+```
