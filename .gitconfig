@@ -6,7 +6,8 @@
   st = status
   fetch = fetch --prune
   graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
-  log = log --oneline --graph --decorate
+  b = branch
+  ba = branch -a
 
 [core]
   editor = /usr/bin/vim
