@@ -298,7 +298,7 @@ endif
 autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
-autocmd BufNewFile,BufRead *.go nnoremap <C-e> :!go %
+autocmd BufNewFile,BufRead *.go nnoremap <C-e> :!go run %
 """"""""""""""""""""""""""""""
 " Ctrl + t で新しいタブを開いてカレントディレクトリからのツリー構造
 """"""""""""""""""""""""""""""
