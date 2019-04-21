@@ -129,9 +129,11 @@ set autoindent
 " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 set smartindent
 " タブ文字の表示幅
-set tabstop=2
+set tabstop=4
+" いくつの連続した空白を1回で削除できるようにする
+set softtabstop=4
 " Vimが挿入するインデントの幅
-set shiftwidth=2
+set shiftwidth=4
 " 行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする
 set smarttab
 " カーソルを行頭、行末で止まらないようにする
@@ -320,7 +322,17 @@ if has("autocmd")
     \ endif
 endif
 """"""""""""""""""""""""""""""
+
 """"""""""""""""""""""""""""""
-" filetypeの自動検出(最後の方に書いた方がいいらしい)
+" filetypeの自動検出
 """"""""""""""""""""""""""""""
+augroup fileTypeIndent
+    autocmd!
+    autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.php setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.html setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.go setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.erb setlocal tabstop=4 softtabstop=4 shiftwidth=4
+augroup END
 filetype on
