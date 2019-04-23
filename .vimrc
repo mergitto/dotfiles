@@ -53,6 +53,8 @@ NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'simeji/winresizer'
 " cssコードのシンタックス
 NeoBundle 'hail2u/vim-css3-syntax'
+" syntax
+NeoBundle 'toyamarinyon/vim-swift'
 
 if has('lua') " lua機能が有効になっている場合・・・・・・①
   "　コードの自動補完
