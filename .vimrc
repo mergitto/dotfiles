@@ -53,7 +53,7 @@ NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'simeji/winresizer'
 " cssコードのシンタックス
 NeoBundle 'hail2u/vim-css3-syntax'
-" syntax
+" swift syntax
 NeoBundle 'toyamarinyon/vim-swift'
 " vue syntax
 NeoBundle 'posva/vim-vue'
