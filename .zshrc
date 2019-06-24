@@ -45,3 +45,6 @@ source $ZSH/oh-my-zsh.sh
 
 # aliases
 alias tree="pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/| /g'"
+alias s="swiftc -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -Xlinker -rpath -Xlinker /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks"
+alias bes="bundle exec rspec"
+alias bundle install="bundle install --path vendor/bundle"
