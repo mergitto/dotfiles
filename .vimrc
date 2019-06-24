@@ -55,6 +55,8 @@ NeoBundle 'simeji/winresizer'
 NeoBundle 'hail2u/vim-css3-syntax'
 " syntax
 NeoBundle 'toyamarinyon/vim-swift'
+" vue syntax
+NeoBundle 'posva/vim-vue'
 
 if has('lua') " lua機能が有効になっている場合・・・・・・①
   "　コードの自動補完
@@ -338,3 +340,24 @@ augroup fileTypeIndent
     autocmd BufNewFile,BufRead *.erb setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END
 filetype on
+
+" vueの時によしなにsyntaxをしてくれる設定
+let g:ft = ''
+function! NERDCommenter_before()
+  if &ft == 'vue'
+    let g:ft = 'vue'
+    let stack = synstack(line('.'), col('.'))
+    if len(stack) > 0
+      let syn = synIDattr((stack)[0], 'name')
+      if len(syn) > 0
+        exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
+      endif
+    endif
+  endif
+endfunction
+function! NERDCommenter_after()
+  if g:ft == 'vue'
+    setf vue
+    let g:ft = ''
+  endif
+endfunction
