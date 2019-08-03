@@ -33,7 +33,7 @@ mkdir ~/.vimbackup
 
 ### zshのインストール
 ```
-yum install zsh
+brew install zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting colordiff reattach-to-user-namespace tmux zplug
 ```
 cat /etc/shells でzshが利用できるか確認する
 おそらく/bin/zshのようなものがあるはず
@@ -45,8 +45,15 @@ chsh -s /bin/zsh # zshの場所は各々上記のコマンドにて確認
 ### .zshrcとのコピーと.oh-my-zshのインストール
 ```
 cp .zshrc ~/
+cp .zprofile ~/
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 ```
+
+### zshell の直前のコマンドの自動補完
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+```
+
 
 ### コマンドのパスを設定する場合
 例：Goのパスを設定する場合
