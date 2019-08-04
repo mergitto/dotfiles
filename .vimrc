@@ -57,6 +57,8 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'toyamarinyon/vim-swift'
 " vue syntax
 NeoBundle 'posva/vim-vue'
+" ファイル検索
+NeoBundle "ctrlpvim/ctrlp.vim"
 
 if has('lua') " lua機能が有効になっている場合・・・・・・①
   "　コードの自動補完
@@ -265,6 +267,10 @@ let g:winresizer_start_key = '<C-h>'
 " 挿入モード時、ステータスラインの色を変更
 """"""""""""""""""""""""""""""
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
+
+" ファイル検索
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 if has('syntax')
   augroup InsertHook
