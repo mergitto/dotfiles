@@ -7,29 +7,6 @@ export ZSH=/個人で設定する/.oh-my-zsh
 # auto suggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# zplugの設定
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
-
-# syntax
-zplug "chrissicool/zsh-256color"
-zplug "Tarrasch/zsh-colors"
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "ascii-soup/zsh-url-highlighter"
-
-# 未インストール項目をインストールする
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-# コマンドをリンクして、PATH に追加し、プラグインは読み込む
-zplug load --verbose
-
-autoload -U promptinit; promptinit
-prompt pure
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -79,3 +56,30 @@ alias s="swiftc -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.pl
 alias bes="bundle exec rspec"
 alias bundle install="bundle install --path vendor/bundle"
 alias df="df -H"
+
+# peco
+alias cdp='cd "$(find . -type d | grep -v "\/\." | peco)"'
+
+# zplugの設定
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+# syntax
+zplug "chrissicool/zsh-256color"
+zplug "Tarrasch/zsh-colors"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "ascii-soup/zsh-url-highlighter"
+
+# 未インストール項目をインストールする
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# コマンドをリンクして、PATH に追加し、プラグインは読み込む
+zplug load --verbose
+
+autoload -U promptinit; promptinit
+prompt pure
