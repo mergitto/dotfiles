@@ -33,7 +33,7 @@ mkdir ~/.vimbackup
 
 ### zshのインストール
 ```
-brew install zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting colordiff reattach-to-user-namespace tmux zplug
+brew install zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting colordiff reattach-to-user-namespace tmux zplug peco
 ```
 cat /etc/shells でzshが利用できるか確認する
 おそらく/bin/zshのようなものがあるはず
