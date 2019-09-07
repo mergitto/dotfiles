@@ -39,7 +39,7 @@ cat /etc/shells でzshが利用できるか確認する
 おそらく/bin/zshのようなものがあるはず
 ### デフォルトのシェルにzshを設定する
 ```
-chsh -s $(which zsh) # zshの場所は各々上記のコマンドにて確認
+chsh -s $(which zsh)
 ```
 
 ### .zshrcとのコピーと.oh-my-zshのインストール
