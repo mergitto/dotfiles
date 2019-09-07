@@ -41,6 +41,10 @@ cat /etc/shells でzshが利用できるか確認する
 ```
 chsh -s $(which zsh)
 ```
+もしくは、 `.bashrc` に直接デフォルトシェルを記述することもできる
+```
+exec $(which zsh)
+```
 
 ### .zshrcとのコピーと.oh-my-zshのインストール
 ```
