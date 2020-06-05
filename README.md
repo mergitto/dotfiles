@@ -48,9 +48,9 @@ exec $(which zsh)
 
 ### .zshrcとのコピーと.oh-my-zshのインストール
 ```
-cp .zshrc ~/
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 cp .zprofile ~/
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp .zshrc ~/
 ```
 
 ### zshell の直前のコマンドの自動補完
