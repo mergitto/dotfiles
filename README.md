@@ -68,3 +68,8 @@ pathの設定を反映させる
 ```
 source ~/.zshrc
 ```
+
+### その他
+
+- itermで開いたvimをスクロールできるようにする
+  - http://lilpacy.info/uncategorized/iterm2-zsh-vim-move-cursor-by-scroll/
