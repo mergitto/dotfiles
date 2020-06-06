@@ -70,5 +70,7 @@ source ~/.zshrc
 
 ### その他
 
+- itermの色設定
+  - Iterm2 → Preferences → Profiles → Colors → 「Color Presets」のタブから Import... を選択, dotfiles内に保存している `meru-hybrid.itermcolors` を選択する
 - itermで開いたvimをスクロールできるようにする
   - http://lilpacy.info/uncategorized/iterm2-zsh-vim-move-cursor-by-scroll/
